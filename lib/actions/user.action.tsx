@@ -3,10 +3,10 @@ import { string } from "zod/v4-mini";
 import { createAdminClient, createSessionClient } from "../appwrite";
 import { appwriteConfig } from "../appwrite/config";
 import { ID, Query } from "node-appwrite";
-import { parseStringify } from "../utils";
 import { cookies } from "next/headers";
 import { avatarPlaceholderUrl } from "@/constants";
 import { redirect } from "next/navigation";
+import { parseStringify } from "../utils";
 
 const getUserByEmail = async (email: string) => {
   const { databases } = await createAdminClient();
