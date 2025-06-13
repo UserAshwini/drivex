@@ -5,12 +5,11 @@ import { Models } from "node-appwrite";
 import React from "react";
 
 interface PageProps {
-  params: { type?: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ type: string }>;
 }
 
-const Page = async ({ searchParams, params }: PageProps) => {
-  const type = params.type || "";
+const PageRoot = async ({ params }: PageProps) => {
+  const { type } = await params;
   const files = await getFiles();
 
   return (
@@ -41,4 +40,4 @@ const Page = async ({ searchParams, params }: PageProps) => {
   );
 };
 
-export default Page;
+export default PageRoot;

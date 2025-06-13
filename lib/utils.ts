@@ -70,10 +70,7 @@ export const getFileType = (fileName: string) => {
   return { type: "other", extension };
 };
 
-export const getFileIcon = (
-  extension: string | undefined,
-  type: FileType | string
-) => {
+export const getFileIcon = (extension: string | undefined, type: string) => {
   switch (extension) {
     // Document
     case "pdf":
